@@ -71,4 +71,5 @@
     (fullscreen-view)))
 (global-set-key (kbd "<f11>") 'toggle-fullscreen)
 
+;; Fixes terminal bell issue on Mac
 (setq ring-bell-function 'ignore)
