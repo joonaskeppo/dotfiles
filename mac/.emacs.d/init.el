@@ -32,13 +32,13 @@
  ((find-font (font-spec :name "Monoid"))
   (set-face-attribute 'default nil
                         :family "Monoid"
-                        :height 90
+                        :height 100
                         :weight 'normal
                         :width 'normal))
  ((find-font (font-spec :name "Ubuntu Mono"))
   (set-face-attribute 'default nil
                         :family "Ubuntu Mono"
-                        :height 90
+                        :height 100
                         :weight 'normal
                         :width 'normal)))
 
@@ -61,3 +61,5 @@
       (windowed-view)
     (fullscreen-view)))
 (global-set-key (kbd "<f11>") 'toggle-fullscreen)
+
+(setq ring-bell-function 'ignore)
