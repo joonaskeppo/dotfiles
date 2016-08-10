@@ -26,6 +26,15 @@
 (add-hook 'before-save-hook
           'delete-trailing-whitespace)
 
+;; Source: https://www.emacswiki.org/emacs/EndOfLineTips
+(add-hook 'find-file-hook 'find-file-check-line-endings)
+(defun dos-file-endings-p ()
+     (string-match "dos" (symbol-name buffer-file-coding-system)))
+(defun find-file-check-line-endings ()
+     (when (dos-file-endings-p)
+         (set-buffer-file-coding-system 'undecided-unix)
+         (set-buffer-modified-p nil)))
+
 (setq inhibit-startup-screen t)
 (global-linum-mode t)
 (cond
