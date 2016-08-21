@@ -1,5 +1,8 @@
 (require 'package)
-(setq package-list '(evil evil-escape better-defaults))
+(setq package-list '(evil
+                     evil-escape
+                     better-defaults
+                     clojure-mode))
 (add-to-list 'package-archives '("melpa" . "http://melpa.org/packages/"))
 (package-initialize)
 (unless package-archive-contents
@@ -73,3 +76,16 @@
 
 ;; Fixes terminal bell issue on Mac
 (setq ring-bell-function 'ignore)
+
+;; Hack from Stack Overflow
+(defun copy-from-osx ()
+(shell-command-to-string "pbpaste"))
+
+(defun paste-to-osx (text &optional push)
+(let ((process-connection-type nil))
+(let ((proc (start-process "pbcopy" "*Messages*" "pbcopy")))
+(process-send-string proc text)
+(process-send-eof proc))))
+
+(setq interprogram-cut-function 'paste-to-osx)
+(setq interprogram-paste-function 'copy-from-osx)
