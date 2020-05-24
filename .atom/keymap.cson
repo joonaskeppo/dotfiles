@@ -1,2 +1,0 @@
-'.platform-darwin, .platform-win32, .platform-linux':
-  'alt-shift-g': 'go-to-line:toggle'
