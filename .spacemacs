@@ -31,45 +31,53 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
-     (sql :variables
-          sql-auto-indent t
-          sql-capitalize-keywords t)
-     ;; ----------------------------------------------------------------
-     ;; Example of useful layers you may want to use right away.
-     ;; Uncomment some layer names and press <SPC f e R> (Vim style) or
-     ;; <M-m f e R> (Emacs style) to install them.
-     ;; ----------------------------------------------------------------
-     helm
-     ;; auto-completion
-     better-defaults
-     emacs-lisp
-     (clojure :variables
-              clojure-enable-linters 'clj-kondo)
-     common-lisp
-     ;; git
-     markdown
-     ;; themes-megapack
-     javascript
-     typescript
-     html
-     ;; org
-     (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
-     ;; spell-checking
-     syntax-checking
-     ;; version-control
-     )
+      (sql :variables
+           sql-auto-indent t
+           sql-capitalize-keywords t)
+      helm
+      (auto-completion :variables
+                       auto-completion-enable-help-tooltip t
+                       auto-completion-enable-snippets-in-popup t
+                       auto-completion-enable-sort-by-usage t)
+      better-defaults
+      emacs-lisp
+      (clojure :variables
+               clojure-enable-linters 'clj-kondo
+               clojure-enable-clj-refactor t)
+      common-lisp
+      (git :variables
+           git-magit-status-fullscreen t
+           magit-diff-refine-hunk 'all)
+      markdown
+      themes-megapack
+      javascript
+      typescript
+      multiple-cursors
+      emoji
+      html
+      org
+      treemacs ;; FIXME: not working as-is
+      (shell :variables
+             shell-default-height 30
+             shell-default-position 'bottom)
+      ;; spell-checking ;; TODO: requires some external packages?
+      syntax-checking
+      (version-control :variables
+                       version-control-diff-tool 'diff-hl
+                       version-control-global-margin t)
+      docker
+      )
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(prettier-js
-                                      gruvbox-theme)
+                                      ;evil-smartparens
+                                      )
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
-   dotspacemacs-excluded-packages '()
+   dotspacemacs-excluded-packages '(treemacs)
    ;; Defines the behaviour of Spacemacs when installing packages.
    ;; Possible values are `used-only', `used-but-keep-unused' and `all'.
    ;; `used-only' installs only explicitly used packages and uninstall any
@@ -137,7 +145,7 @@ values."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press <SPC> T n to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(spacemacs-light)
+   dotspacemacs-themes '(doom-nord gruvbox-dark-soft)
    ;; If non nil the cursor color matches the state color in GUI Emacs.
    dotspacemacs-colorize-cursor-according-to-state t
    ;; Default font, or prioritized list of fonts. `powerline-scale' allows to
@@ -230,10 +238,10 @@ values."
    dotspacemacs-loading-progress-bar t
    ;; If non nil the frame is fullscreen when Emacs starts up. (default nil)
    ;; (Emacs 24.4+ only)
-   dotspacemacs-fullscreen-at-startup nil
+   dotspacemacs-fullscreen-at-startup t
    ;; If non nil `spacemacs/toggle-fullscreen' will not use native fullscreen.
    ;; Use to disable fullscreen animations in OSX. (default nil)
-   dotspacemacs-fullscreen-use-non-native nil
+   dotspacemacs-fullscreen-use-non-native t
    ;; If non nil the frame is maximized when Emacs starts up.
    ;; Takes effect only if `dotspacemacs-fullscreen-at-startup' is nil.
    ;; (default nil) (Emacs 24.4+ only)
@@ -275,11 +283,11 @@ values."
    dotspacemacs-folding-method 'evil
    ;; If non-nil smartparens-strict-mode will be enabled in programming modes.
    ;; (default nil)
-   dotspacemacs-smartparens-strict-mode nil
+   dotspacemacs-smartparens-strict-mode t
    ;; If non-nil pressing the closing parenthesis `)' key in insert mode passes
    ;; over any automatically added closing parenthesis, bracket, quote, etc…
    ;; This can be temporary disabled by pressing `C-q' before `)'. (default nil)
-   dotspacemacs-smart-closing-parenthesis nil
+   dotspacemacs-smart-closing-parenthesis t
    ;; Select a scope to highlight delimiters. Possible values are `any',
    ;; `current', `all' or `nil'. Default is `all' (highlight any scope and
    ;; emphasis the current one). (default 'all)
@@ -300,7 +308,9 @@ values."
    ;; `trailing' to delete only the whitespace at end of lines, `changed'to
    ;; delete only whitespace for changed lines or `nil' to disable cleanup.
    ;; (default nil)
-   dotspacemacs-whitespace-cleanup nil
+   dotspacemacs-whitespace-cleanup 'trailing
+   ;; Added due to test results failing
+   dotspacemacs-mode-line-theme 'spacemacs
    ))
 
 (defun dotspacemacs/user-init ()
@@ -310,6 +320,8 @@ executes.
  This function is mostly useful for variables that need to be set
 before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
+
+  (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
   )
 
 (defun dotspacemacs/user-config ()
@@ -320,19 +332,20 @@ This is the place where most of your configurations should be done. Unless it is
 explicitly specified that a variable should be set before a package is loaded,
 you should place your code here."
 
-  (disable-theme 'spacemacs-light)
-  (load-theme 'gruvbox-light-hard t)
-
   ;; Powerline configs
   (setq powerline-default-separator nil
-    spaceline-buffer-position-p nil
-    spaceline-hud-p nil
-    spaceline-battery-p nil)
+        spaceline-buffer-position-p nil
+        spaceline-hud-p nil
+        spaceline-battery-p nil)
 
   (setq-default line-spacing 2)
 
-  ;(setq dotspacemacs-mode-line-theme 'vanilla)
-  ;(setq neo-theme 'icons)
+  ;; (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
+  ;; (add-hook 'after-init-hook #'global-emojify-mode)
+
+  ;; Cleverparens
+  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
+  (setq evil-cleverparens-drag-comment-blocks nil)
 
   ;; =========
   ;; Clojure
@@ -364,6 +377,7 @@ you should place your code here."
   (add-hook 'web-mode-hook 'prettier-js-mode)
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
+
 
 
   )
