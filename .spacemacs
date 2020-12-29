@@ -31,6 +31,8 @@ values."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+      (osx :variables osx-option-as 'meta
+                      osx-right-option-as 'none)
       (sql :variables
            sql-auto-indent t
            sql-capitalize-keywords t)
@@ -56,6 +58,7 @@ values."
       emoji
       html
       org
+      bibtex
       treemacs ;; FIXME: not working as-is
       (shell :variables
              shell-default-height 30
@@ -72,8 +75,7 @@ values."
    ;; packages, then consider creating a layer. You can also put the
    ;; configuration in `dotspacemacs/user-config'.
    dotspacemacs-additional-packages '(prettier-js
-                                      ;evil-smartparens
-                                      )
+                                      evil-smartparens)
    ;; A list of packages that cannot be updated.
    dotspacemacs-frozen-packages '()
    ;; A list of packages that will not be installed and loaded.
@@ -322,34 +324,15 @@ before packages are loaded. If you are unsure, you should try in setting them in
 `dotspacemacs/user-config' first."
 
   (set-fontset-font t 'unicode "Apple Color Emoji" nil 'prepend)
-  )
 
-(defun dotspacemacs/user-config ()
-  "Configuration function for user code.
-This function is called at the very end of Spacemacs initialization after
-layers configuration.
-This is the place where most of your configurations should be done. Unless it is
-explicitly specified that a variable should be set before a package is loaded,
-you should place your code here."
+  ;; --- Lisps ---
 
-  ;; Powerline configs
-  (setq powerline-default-separator nil
-        spaceline-buffer-position-p nil
-        spaceline-hud-p nil
-        spaceline-battery-p nil)
+  (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
 
-  (setq-default line-spacing 2)
+  ;; --- Clojure ---
 
-  ;; (add-hook 'smartparens-enabled-hook #'evil-smartparens-mode)
-  ;; (add-hook 'after-init-hook #'global-emojify-mode)
-
-  ;; Cleverparens
-  (spacemacs/toggle-evil-safe-lisp-structural-editing-on-register-hooks)
-  (setq evil-cleverparens-drag-comment-blocks nil)
-
-  ;; =========
-  ;; Clojure
-  ;; =========
+  (with-eval-after-load 'cider
+    (setq cider-repl-pop-to-buffer-on-connect t))
 
   ;; it formats buffer and attempts to return to original position.
   (defun cider-format-buffer-back () (interactive)
@@ -363,21 +346,36 @@ you should place your code here."
                    'cider-format-buffer-back
                    t t))
 
-  (add-hook 'clojure-mode-hook
-            'add-clj-format-before-save)
+  (add-hook 'clojure-mode-hook #'add-clj-format-before-save)
 
-  (with-eval-after-load 'cider
-    (setq cider-repl-pop-to-buffer-on-connect t))
+  ;; --- web stuff ---
 
-  ;; =========
-  ;; Web stuff
-  ;; =========
+  (add-hook 'web-mode-hook #'prettier-js-mode)
+  (add-hook 'js2-mode-hook #'prettier-js-mode)
+  )
 
-  (add-hook 'js2-mode-hook 'prettier-js-mode)
-  (add-hook 'web-mode-hook 'prettier-js-mode)
+(defun dotspacemacs/user-config ()
+  "Configuration function for user code.
+This function is called at the very end of Spacemacs initialization after
+layers configuration.
+This is the place where most of your configurations should be done. Unless it is
+explicitly specified that a variable should be set before a package is loaded,
+you should place your code here."
+
+  ;; --- Powerline configs ---
+  (setq powerline-default-separator nil
+        spaceline-buffer-position-p nil
+        spaceline-hud-p nil
+        spaceline-battery-p nil)
+
+  (setq-default line-spacing 2)
+
+  ;; --- Lisp ---
+
+  (global-set-key (kbd "C-l") 'evil-lisp-state)
+
+  ;; --- web stuff ---
+
   (setq-default js2-basic-offset 2
                 js-indent-level 2)
-
-
-
   )
