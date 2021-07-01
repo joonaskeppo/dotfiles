@@ -85,6 +85,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
+alias vim='nvim'
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
@@ -99,5 +100,15 @@ source $ZSH/oh-my-zsh.sh
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias e="emacs"
+alias aatos="cd ~/Documents/Hommat/Aatos/repos"
+
+alias doom="~/.emacs.d/bin/doom"
+alias tidy=/usr/local/bin/tidy
 
 export PATH="$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export MYVIMRC="$HOME/.config/nvim/init.vim"
+
+export GEM_HOME="$HOME/.gem"
+
+alias upall="brew update && brew upgrade; npm update -g; gem update --system"
+
