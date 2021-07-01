@@ -5,6 +5,7 @@
 
 # Junk
 [Tt]humbs.db
+*.icloud
 *.DS_Store
 *~
 *.swp
