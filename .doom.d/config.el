@@ -79,13 +79,20 @@
 
 (map! :map global-map "C-x t t" #'treemacs)
 
-;; --- custom ---
+;; --- org ---
 
-;; (defun kill-other-buffers ()
-;;     "Kill all other buffers."
-;;     (interactive)
-;;     (mapc 'kill-buffer
-;;           (delq (current-buffer)
-;;                 (remove-if-not 'buffer-file-name (buffer-list)))))
+(require 'org-habit)
 
-;; (map! :map global-map "M-x b" #'kill-other-buffers)
+(setq org-babel-clojure-backend 'cider)
+
+;; (use-package! org-super-agenda
+;;   :after  org-agenda
+;;   :init
+;;   (setq org-super-agenda-groups '((:name "asdasdssdsda" :habit t)
+;;                                   (:name "Important" :priority "A")))
+;;   :config
+;;   (org-super-agenda-mode))
+
+;; --- misc ---
+
+(setq +doom-dashboard-banner-file (expand-file-name "emacs-e.svg" doom-private-dir))
