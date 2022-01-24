@@ -49,3 +49,8 @@
 ;(unpin! pinned-package another-pinned-package)
 ;; ...Or *all* packages (NOT RECOMMENDED; will likely break things)
 ;(unpin! t)
+
+;; FIXME: delete when map.el fixed, upstream (https://github.com/hlissner/doom-emacs/issues/5537)
+(package! map :pin "bb50dbaafc0f71743bd9ffd5784258a9fd682c20")
+;; FIXME: tempfix for issue with parseclj and shadow-cljs with cider-jack-in-cljs (https://github.com/hlissner/doom-emacs/issues/5561)
+(package! parseclj :recipe (:build (:not compile)))
