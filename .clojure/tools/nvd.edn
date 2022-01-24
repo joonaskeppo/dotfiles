@@ -1,0 +1,1 @@
+{:lib nvd-clojure/nvd-clojure, :coord {:mvn/version "1.9.0"}}

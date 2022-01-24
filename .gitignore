@@ -1,3 +1,6 @@
+# Clojure
+**/.cpcache
+
 # Emacs
 .emacs.d/*
 !.emacs.d/init.el
