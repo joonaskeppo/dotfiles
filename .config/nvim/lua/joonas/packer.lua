@@ -1,4 +1,4 @@
-local use_plugins = require('joonas/plugins')
+local plugins = require('joonas/plugins')
 
 -- parts taken/adapted from:
 -- - Packer docs
@@ -17,7 +17,7 @@ end
 
 local packer_bootstrap = ensure_packer()
 
--- Reload NeoVim whenever this or plugins.lua file is saved
+-- Reload Neovim whenever this or plugins.lua file is saved
 vim.cmd [[
     augroup packer_user_config
         autocmd!
@@ -42,7 +42,14 @@ packer.init {
 
 return packer.startup(function(use)
     -- Install plugins
-    use_plugins(use)
+    for key, value in pairs(plugins) do
+        if type(key) == 'number' then
+            use(value)
+        else
+            table.insert(value, key)
+            use(value)
+        end
+    end
 
     -- Automatically set up configuration after cloning packer.nvim
     if packer_bootstrap then
