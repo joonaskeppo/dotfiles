@@ -1,6 +1,10 @@
 # Clojure
 **/.cpcache
 
+# NeoVim
+.config/nvim/plugin/
+.config/nvim/autoload/
+
 # Emacs
 .emacs.d/*
 !.emacs.d/init.el
