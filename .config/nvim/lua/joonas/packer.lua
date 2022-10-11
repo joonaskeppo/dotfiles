@@ -28,16 +28,17 @@ vim.cmd [[
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
+    vim.notify("could not load packer")
     return
 end
 
--- Have packer use a popup window
 packer.init {
-  display = {
-    open_fn = function()
-      return require('packer.util').float { border = "rounded" }
-    end,
-  },
+    display = {
+        open_fn = function()
+            -- Have packer use a popup window
+            return require('packer.util').float { border = "rounded" }
+        end,
+    },
 }
 
 return packer.startup(function(use)

@@ -14,9 +14,6 @@ vim.g.maplocalleader = " "
 --keymap("n", "<C-k>", "<C-w>k", opts)
 --keymap("n", "<C-l>", "<C-w>l", opts)
 
--- Directory, project navigation
-keymap("n", "<leader>e", ":Lex 30<CR>", opts)
-
 -- Buffers
 keymap("n", "<S-l>", ":bnext<CR>", opts)
 keymap("n", "<S-h>", ":bprevious<CR>", opts)
@@ -27,3 +24,8 @@ keymap("v", ">", ">gv", opts)
 
 -- Yankage
 keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously yanked
+
+-- Telescope
+keymap("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>", opts)
+keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+

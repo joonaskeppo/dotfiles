@@ -14,7 +14,8 @@ vim.o.cursorline = true -- highlight current line
 vim.o.wrap = false -- don't wrap long lines
 
 -- Editing
---vim.cmd [[set iskeyword +=-]] -- this-is-one-word (so `dw` would delete the entire thing)
+vim.cmd [[set iskeyword +=-]] -- this-is-one-word (so `dw` would delete the entire thing)
+vim.o.completeopt = "menuone,noselect" -- insert mode completion
 
 -- Files
 vim.o.fileencoding = "utf-8"
@@ -26,11 +27,10 @@ vim.o.pumheight = 10 -- popup menu height
 
 -- Search
 vim.o.ignorecase = true -- ignore case in search patterns
-
--- Theming
-vim.o.termguicolors = true
+vim.o.smartcase = true
 
 -- Misc
+vim.o.termguicolors = true -- "Enables 24-bit RGB color in the |TUI|"
 vim.o.clipboard = 'unnamedplus' -- use mac clipboard
 vim.o.mouse = 'a' -- ensure proper mouse support
 
