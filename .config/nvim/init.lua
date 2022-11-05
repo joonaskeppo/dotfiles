@@ -1,9 +1,14 @@
-require 'joonas/options'
-require 'joonas/keymaps'
-require 'joonas/packer'
-require 'joonas/colors'
-require 'joonas/cmp'
-require 'joonas/lsp'
-require 'joonas/autopairs'
+--- Base Configurations ---
+require 'joonas.options'
+require 'joonas.keymaps'
+require 'joonas.packer'
 
-
+--- Plugins ---
+require 'joonas.plugins.colors'
+require 'joonas.plugins.cmp'
+require 'joonas.plugins.lsp'
+require 'joonas.plugins.treesitter'
+require 'joonas.plugins.autopairs'
+require 'joonas.plugins.comment'
+require 'joonas.plugins.nvim-tree'
+require 'joonas.plugins.conjure'

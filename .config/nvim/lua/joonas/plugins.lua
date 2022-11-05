@@ -8,6 +8,10 @@ return {
     -- Misc
     'nvim-lua/plenary.nvim', -- reusable Lua fns
     'windwp/nvim-autopairs', -- [], (), {}, "", ''
+    'numToStr/Comment.nvim',
+    'JoosepAlviste/nvim-ts-context-commentstring',
+    'p00f/nvim-ts-rainbow', -- rainbow parens
+    'nvim-lualine/lualine.nvim',
 
     -- Themes
     'ellisonleao/gruvbox.nvim',
@@ -16,6 +20,7 @@ return {
     'neovim/nvim-lspconfig',
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
+    'jose-elias-alvarez/null-ls.nvim',
 
     -- Completion
     'hrsh7th/nvim-cmp', -- base completion plugin
@@ -32,45 +37,13 @@ return {
     -- Telescope
     'nvim-telescope/telescope.nvim',
 
+    -- File Navigation
+    'nvim-tree/nvim-tree.lua',
+    'nvim-tree/nvim-web-devicons',
+
     -- Treesitter
-    ['nvim-treesitter/nvim-treesitter'] = { 
-        run = function()
-	        require('nvim-treesitter.install').update { with_sync = true }
-        end,
-        config = function()
-            require('nvim-treesitter.configs').setup {
-                ensure_installed = 'all',
-                sync_installed = false,
-                ignore_install = { "phpdoc" }, -- seems to be borked atm (`npm install` error)
-                highlight = {
-                    enable = true,
-                    disable = { "" },
-                },
-                additional_vim_regex_highlighting = false,
-                indent = {
-                    enable = true,
-                    disable = { "" },
-                },
-                rainbow = {
-                    enable = true,
-                    extended_mode = true,
-                    max_file_lines = nil,
-                }
-            }
-        end,
-    },
-    'p00f/nvim-ts-rainbow', -- rainbow parens
+    'nvim-treesitter/nvim-treesitter',
 
     -- Clojure
-    ['Olical/conjure'] = {
-        as = 'conjure',
-        config = function()
-            vim.g['conjure#highlight#enabled'] = true
-        end
-    },
-
-    -- Modeline
-    ['nvim-lualine/lualine.nvim'] = {
-        requires = { 'kyazdani42/nvim-web-devicons', opt = true }
-    }
+    'Olical/conjure',
 }

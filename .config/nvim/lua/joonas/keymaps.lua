@@ -25,7 +25,16 @@ keymap("v", ">", ">gv", opts)
 -- Yankage
 keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously yanked
 
--- Telescope
+-- Navigation
 keymap("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>", opts)
+keymap("n", "<leader>fp", "<cmd>Telescope git_files find_command=rg,--hidden,--files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
+keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", opts)
+
+-- Formatting
+local function format()
+    vim.lsp.buf.format({ async = true })
+end
+
+vim.keymap.set("n", "<leader>ff", format, { desc = "LSP: Formats the current buffer" })
 
