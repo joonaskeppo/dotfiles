@@ -44,6 +44,12 @@ return {
     -- Treesitter
     'nvim-treesitter/nvim-treesitter',
 
+    -- Editing
+    'guns/vim-sexp',
+    'tpope/vim-sexp-mappings-for-regular-people',
+    'tpope/vim-repeat',
+    'tpope/vim-surround',
+
     -- Clojure
     'Olical/conjure',
 }
