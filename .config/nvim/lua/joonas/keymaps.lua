@@ -32,9 +32,5 @@ keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- Formatting
-local function format()
-    vim.lsp.buf.format({ async = true })
-end
-
-vim.keymap.set("n", "<leader>ff", format, { desc = "LSP: Formats the current buffer" })
+vim.keymap.set("n", "<leader>gq", vim.lsp.buf.format, opts)
 
