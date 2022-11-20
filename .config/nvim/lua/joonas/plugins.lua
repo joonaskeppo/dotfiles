@@ -12,6 +12,10 @@ return {
     'JoosepAlviste/nvim-ts-context-commentstring',
     'p00f/nvim-ts-rainbow', -- rainbow parens
     'nvim-lualine/lualine.nvim',
+    'christoomey/vim-tmux-navigator', -- seamless navigation between tmux and vim window splits
+
+    -- File Navigation
+    'kevinhwang91/rnvimr', -- ranger support
 
     -- Themes
     'ellisonleao/gruvbox.nvim',
@@ -37,10 +41,6 @@ return {
     -- Telescope
     'nvim-telescope/telescope.nvim',
 
-    -- File Navigation
-    'nvim-tree/nvim-tree.lua',
-    'nvim-tree/nvim-web-devicons',
-
     -- Treesitter
     'nvim-treesitter/nvim-treesitter',
 
@@ -49,6 +49,10 @@ return {
     'tpope/vim-sexp-mappings-for-regular-people',
     'tpope/vim-repeat',
     'tpope/vim-surround',
+
+    -- Git
+    'lewis6991/gitsigns.nvim',
+    'tpope/vim-fugitive',
 
     -- Clojure
     'Olical/conjure',

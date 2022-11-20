@@ -10,5 +10,7 @@ require 'joonas.plugins.lsp'
 require 'joonas.plugins.treesitter'
 require 'joonas.plugins.autopairs'
 require 'joonas.plugins.comment'
-require 'joonas.plugins.nvim-tree'
 require 'joonas.plugins.conjure'
+require 'joonas.plugins.gitsigns'
+require 'joonas.plugins.rnvimr'
+

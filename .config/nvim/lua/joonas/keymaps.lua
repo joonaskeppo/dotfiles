@@ -8,15 +8,15 @@ keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Window navigation
---keymap("n", "<C-h>", "<C-w>h", opts)
---keymap("n", "<C-j>", "<C-w>j", opts)
---keymap("n", "<C-k>", "<C-w>k", opts)
---keymap("n", "<C-l>", "<C-w>l", opts)
+-- Windows
+keymap("n", "<leader>2", "<cmd>split<CR>", opts)
+keymap("n", "<leader>3", "<cmd>vsplit<CR>", opts)
+keymap("n", "<leader>1", "<cmd>only<CR>", opts)
+keymap("n", "<leader>0", "<cmd>close<CR>", opts)
 
 -- Buffers
-keymap("n", "<S-l>", ":bnext<CR>", opts)
-keymap("n", "<S-h>", ":bprevious<CR>", opts)
+keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
+keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
 
 -- Indentation
 keymap("v", "<", "<gv", opts)
@@ -25,11 +25,13 @@ keymap("v", ">", ">gv", opts)
 -- Yankage
 keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously yanked
 
+-- Files
+keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
+
 -- Navigation
 keymap("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope git_files find_command=rg,--hidden,--files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
-keymap("n", "<leader>t", "<cmd>NvimTreeToggle<cr>", opts)
 
 -- Formatting
 vim.keymap.set("n", "<leader>gq", vim.lsp.buf.format, opts)
