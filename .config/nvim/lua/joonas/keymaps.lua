@@ -26,7 +26,7 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously yanked
 
 -- Files
-keymap("n", "<leader>r", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<leader>R", "<cmd>RnvimrToggle<CR>", opts)
 
 -- Navigation
 keymap("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>", opts)
