@@ -1,3 +1,5 @@
+vim.cmd [[set termguicolors]]
+
 -- Spacing
 vim.o.tabstop = 4
 vim.o.softtabstop = 4

@@ -18,8 +18,11 @@ return {
     'kevinhwang91/rnvimr', -- ranger support
 
     -- Themes
-    --[[ 'ellisonleao/gruvbox.nvim', ]]
-    'eddyekofo94/gruvbox-flat.nvim',
+    'rktjmp/lush.nvim', -- for theming
+    'ellisonleao/gruvbox.nvim',
+    'cideM/yui',
+    'kvrohit/rasmus.nvim',
+    'mcchrish/zenbones.nvim',
 
     -- LSP
     'neovim/nvim-lspconfig',
