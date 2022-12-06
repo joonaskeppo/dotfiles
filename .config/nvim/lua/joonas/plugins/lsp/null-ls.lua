@@ -10,7 +10,6 @@ null_ls.setup {
     debug = false,
     sources = {
         formatting.stylua,
-        formatting.cljstyle,
         formatting.prettier,
         formatting.clang_format,
         diagnostics.clj_kondo,
