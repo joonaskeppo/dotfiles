@@ -29,6 +29,8 @@ keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously
 keymap("n", "<leader>R", "<cmd>RnvimrToggle<CR>", opts)
 
 -- Navigation
+keymap("n", "<C-d>", "<C-d>zz", opts)
+keymap("n", "<C-u>", "<C-u>zz", opts)
 keymap("n", "<leader>ff", "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>", opts)
 keymap("n", "<leader>fp", "<cmd>Telescope git_files find_command=rg,--hidden,--files<cr>", opts)
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
