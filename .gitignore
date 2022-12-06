@@ -1,7 +1,9 @@
 # Clojure
 **/.cpcache
+**/.clj-kondo
+**/.lsp
 
-# NeoVim
+# Neovim
 .config/nvim/plugin/
 .config/nvim/autoload/
 
