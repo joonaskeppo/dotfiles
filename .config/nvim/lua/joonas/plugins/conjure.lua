@@ -9,6 +9,6 @@ vim.g['conjure#highlight#enabled'] = true
 
 -- Portal
 vim.cmd [[
-    command! PortalAPIOpen ConjureEval (do (require '[portal.api]) (portal.api/tap) (portal.api/open))
+    command! PortalAPIOpen ConjureEval (do (require '[portal.api]) (portal.api/tap) (portal.api/open {:theme :portal.colors/nord}))
 ]]
 
