@@ -1,6 +1,6 @@
-local colorscheme = 'yui'
+local colorscheme = 'kanagawabones'
 
-vim.o.background = 'light'
+vim.o.background = 'dark'
 
 vim.g.zenbones_lightness = 'bright'
 vim.g.zenbones_italic_comments = true

@@ -34,5 +34,7 @@ keymap("n", "<leader>fp", "<cmd>Telescope git_files find_command=rg,--hidden,--f
 keymap("n", "<leader>fg", "<cmd>Telescope live_grep<cr>", opts)
 
 -- Formatting
+-- for fixing indentation inside paragraph, use `=ip`
+-- for fixing indentation from point until EOF, use `=G`
 vim.keymap.set("n", "<leader>gq", vim.lsp.buf.format, opts)
 

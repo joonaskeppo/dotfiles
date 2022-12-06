@@ -35,6 +35,3 @@ vim.o.smartcase = true
 vim.o.termguicolors = true -- "Enables 24-bit RGB color in the |TUI|"
 vim.o.clipboard = 'unnamedplus' -- use mac clipboard
 vim.o.mouse = 'a' -- ensure proper mouse support
-
--- Conjure
-vim.g['conjure#highlight#enabled'] = true

@@ -29,6 +29,7 @@ return {
     'williamboman/mason.nvim',
     'williamboman/mason-lspconfig.nvim',
     'jose-elias-alvarez/null-ls.nvim',
+    'folke/trouble.nvim', -- pretty diagnostics
 
     -- Completion
     'hrsh7th/nvim-cmp', -- base completion plugin
@@ -37,6 +38,7 @@ return {
     'hrsh7th/cmp-buffer',
     'hrsh7th/cmp-path',
     'hrsh7th/cmp-cmdline',
+    'PaterJason/cmp-conjure',
 
     -- Snippets
     'L3MON4D3/LuaSnip', -- snippets engine
