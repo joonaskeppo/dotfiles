@@ -1,12 +1,15 @@
-local colorscheme = 'kanagawabones'
+-- Dark scheme
+--[[ local colorscheme = 'kanagawabones' ]]
+--[[ vim.o.background = 'dark' ]]
 
-vim.o.background = 'dark'
-
+-- Light scheme
+local colorscheme = 'zenbones'
+vim.o.background = 'light'
 vim.g.zenbones_lightness = 'bright'
 vim.g.zenbones_italic_comments = true
 
---[[ vim.g.gruvbox_material_background = 'medium' ]]
---[[ vim.g.gruvbox_material_better_performance = 1 ]]
+--[[ local colorscheme = 'yui'; ]]
+--[[ vim.o.background = 'light'; ]]
 
 local status_ok, _  = pcall(vim.cmd, "colorscheme " .. colorscheme)
 

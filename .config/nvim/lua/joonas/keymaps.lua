@@ -9,14 +9,14 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Windows
-keymap("n", "<leader>2", "<cmd>split<CR>", opts)
-keymap("n", "<leader>3", "<cmd>vsplit<CR>", opts)
-keymap("n", "<leader>1", "<cmd>only<CR>", opts)
-keymap("n", "<leader>0", "<cmd>close<CR>", opts)
+keymap("n", "<leader>2", "<cmd>split<cr>", opts)
+keymap("n", "<leader>3", "<cmd>vsplit<cr>", opts)
+keymap("n", "<leader>1", "<cmd>only<cr>", opts)
+keymap("n", "<leader>0", "<cmd>close<cr>", opts)
 
 -- Buffers
-keymap("n", "<S-l>", "<cmd>bnext<CR>", opts)
-keymap("n", "<S-h>", "<cmd>bprevious<CR>", opts)
+keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)
+keymap("n", "<S-h>", "<cmd>bprevious<cr>", opts)
 
 -- Indentation
 keymap("v", "<", "<gv", opts)
@@ -26,7 +26,7 @@ keymap("v", ">", ">gv", opts)
 keymap("v", "p", '"_dP', opts) -- continue pasting the thing that was previously yanked
 
 -- Files
-keymap("n", "<leader>R", "<cmd>RnvimrToggle<CR>", opts)
+keymap("n", "<space>fb", "<cmd>Telescope file_browser<cr>", opts)
 
 -- Navigation
 keymap("n", "<C-d>", "<C-d>zz", opts)
