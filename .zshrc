@@ -4,9 +4,7 @@ plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
 alias vim='nvim'
-alias e="emacs"
-alias hrs="cd ~/Documents/Hommat/HRS/repos"
-alias doom="~/.config/emacs/bin/doom"
+alias e="nvim"
 alias tidy="/usr/local/bin/tidy"
 
 export MYVIMRC="$HOME/.config/nvim/init.vim"
