@@ -6,6 +6,7 @@ end
 
 -- General settings
 vim.g['conjure#highlight#enabled'] = true
+vim.g['conjure#extract#tree_sitter#enabled'] = false -- TEMP? Seems to bork Conjure's word evaluation
 
 -- Portal
 vim.cmd [[
