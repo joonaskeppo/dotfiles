@@ -62,4 +62,9 @@ return {
     -- Lisps
     'Olical/conjure',
     'wlangstroth/vim-racket',
+
+    -- Markup
+    'godlygeek/tabular',
+    'preservim/vim-markdown',
+    'nvim-orgmode/orgmode'
 }

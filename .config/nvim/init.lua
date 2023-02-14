@@ -15,4 +15,5 @@ require 'joonas.plugins.conjure'
 require 'joonas.plugins.gitsigns'
 require 'joonas.plugins.rnvimr'
 require 'joonas.plugins.sexp'
+require 'joonas.plugins.org'
 
