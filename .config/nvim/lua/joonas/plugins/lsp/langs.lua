@@ -6,7 +6,7 @@ local base_opts = {
 }
 
 local servers = {
-	sumneko_lua = require("joonas.plugins.lsp.settings.sumneko_lua"),
+	lua_ls = require("joonas.plugins.lsp.settings.lua_ls"),
 	clangd = require("joonas.plugins.lsp.settings.clangd"),
 	clojure_lsp = require("joonas.plugins.lsp.settings.clojure_lsp"),
 }
