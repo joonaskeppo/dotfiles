@@ -16,10 +16,6 @@ return {
     'nvim-tree/nvim-web-devicons',
 
     -- Themes
-    'rktjmp/lush.nvim', -- for theming
-    'ellisonleao/gruvbox.nvim',
-    'cideM/yui',
-    'kvrohit/rasmus.nvim',
     'mcchrish/zenbones.nvim',
 
     -- LSP
@@ -45,6 +41,8 @@ return {
     -- Telescope
     'nvim-telescope/telescope.nvim',
     'nvim-telescope/telescope-file-browser.nvim', -- file navigation, netrw replacement
+    ['nvim-telescope/telescope-fzf-native.nvim'] = -- fzf for better search
+        { run = 'make'},
 
     -- Treesitter
     'nvim-treesitter/nvim-treesitter',

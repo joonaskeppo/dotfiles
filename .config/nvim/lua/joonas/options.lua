@@ -35,3 +35,10 @@ vim.o.smartcase = true
 vim.o.termguicolors = true -- "Enables 24-bit RGB color in the |TUI|"
 vim.o.clipboard = 'unnamedplus' -- use mac clipboard
 vim.o.mouse = 'a' -- ensure proper mouse support
+
+-- Colors & Theming
+local colorscheme = 'zenbones'
+vim.o.background = 'light'
+vim.g.zenbones_lightness = 'bright'
+vim.g.zenbones_italic_comments = true
+vim.cmd('colorscheme ' .. colorscheme)

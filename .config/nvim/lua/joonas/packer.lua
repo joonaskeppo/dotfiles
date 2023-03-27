@@ -17,14 +17,6 @@ end
 
 local packer_bootstrap = ensure_packer()
 
--- Reload Neovim whenever this or plugins.lua file is saved
-vim.cmd [[
-    augroup packer_user_config
-        autocmd!
-        autocmd BufWritePost {plugins,packer}.lua source <afile> | PackerSync
-    augroup end
-]]
-
 -- Use a protected call so we don't error out on first use
 local status_ok, packer = pcall(require, "packer")
 if not status_ok then
