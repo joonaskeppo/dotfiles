@@ -8,9 +8,8 @@ npairs.setup {
         lua = {'string'},-- it will not add a pair on that treesitter node
         javascript = {'template_string'},
     },
-    disable_filetype = { 'TelescopePrompt' }
+    disable_filetype = { 'TelescopePrompt', 'clojure' }
 }
 
 cmp.event:on("confirm_done", cmp_autopairs.on_confirm_done { map_char = { tex = "" } })
-
 
