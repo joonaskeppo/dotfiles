@@ -16,8 +16,12 @@ vim.o.cursorline = true -- highlight current line
 vim.o.wrap = false -- don't wrap long lines
 
 -- Editing
-vim.cmd [[set iskeyword +=-]] -- this-is-one-word (so `dw` would delete the entire thing)
+vim.cmd('set iskeyword +=-') -- this-is-one-word (so `dw` would delete the entire thing)
 vim.o.completeopt = "menuone,noselect" -- insert mode completion
+
+-- Folding
+vim.cmd('set foldmethod=indent')
+vim.cmd('set nofoldenable')
 
 -- Files
 vim.o.fileencoding = "utf-8"
