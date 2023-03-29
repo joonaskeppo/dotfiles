@@ -3,16 +3,19 @@ local term_opts = { silent = true }
 
 local keymap = vim.api.nvim_set_keymap
 
+-- Basics of navigation, the sane defaults
+-- * <C-w> for all window-based stuff 
+-- * Jumplist with <C-i> (older) and <C-i> (newer), also <C-t> for popping LSP tag stack
+-- * Marks with m; capital letters for global marks (e.g., mA), lower-case letters for buffer-local marks (e.g., ma)
+--   * Jump to mark with ' (e.g., 'a or 'A)
+
 -- Leader key
 keymap("", "<Space>", "<Nop>", opts)
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
--- Windows
-keymap("n", "<leader>2", "<cmd>split<cr>", opts)
-keymap("n", "<leader>3", "<cmd>vsplit<cr>", opts)
-keymap("n", "<leader>1", "<cmd>only<cr>", opts)
-keymap("n", "<leader>0", "<cmd>close<cr>", opts)
+-- Sourcing
+keymap("n", "<leader><cr>", "<cmd>:so ~/.config/nvim/init.lua<cr>", opts)
 
 -- Buffers
 keymap("n", "<S-l>", "<cmd>bnext<cr>", opts)

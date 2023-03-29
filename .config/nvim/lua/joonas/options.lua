@@ -14,10 +14,12 @@ vim.o.splitbelow = true
 vim.o.splitright = true
 vim.o.cursorline = true -- highlight current line
 vim.o.wrap = false -- don't wrap long lines
+vim.o.scrolloff = 8 -- start scrolling at offset of 8 lines
 
 -- Editing
 vim.cmd('set iskeyword +=-') -- this-is-one-word (so `dw` would delete the entire thing)
 vim.o.completeopt = "menuone,noselect" -- insert mode completion
+vim.o.guicursor = ""
 
 -- Folding
 vim.cmd('set foldmethod=indent')
