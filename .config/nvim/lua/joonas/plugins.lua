@@ -45,6 +45,11 @@ return {
     ['nvim-telescope/telescope-fzf-native.nvim'] = -- fzf for better search
         { run = 'make'},
 
+    -- Search
+    ['junegunn/fzf'] =
+        { build = function() vim.fn['fzf#install']() end},
+    'junegunn/fzf.vim',
+
     -- Treesitter
     'nvim-treesitter/nvim-treesitter',
 
