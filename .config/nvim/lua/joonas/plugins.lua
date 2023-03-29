@@ -16,6 +16,7 @@ return {
     'nvim-tree/nvim-web-devicons',
 
     -- Themes
+    'rktjmp/lush.nvim',
     'mcchrish/zenbones.nvim',
 
     -- LSP
