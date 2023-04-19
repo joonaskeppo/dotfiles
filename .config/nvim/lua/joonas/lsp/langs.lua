@@ -1,4 +1,4 @@
-local handlers = require("after.plugin.lsp.handlers")
+local handlers = require("joonas.lsp.handlers")
 
 local base_opts = {
 	on_attach = handlers.on_attach,
