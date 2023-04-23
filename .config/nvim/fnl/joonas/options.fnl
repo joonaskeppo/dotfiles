@@ -1,9 +1,6 @@
 (module joonas.options
   {require {nvim aniseed.nvim}})
 
-;; -- Colors --
-(set nvim.g.termguicolors true)
-
 ;; -- Spacing --
 (set nvim.o.tabstop 4)
 (set nvim.o.softtabstop 4)
@@ -23,7 +20,7 @@
 ; -- Editing --
 (nvim.ex.set "iskeyword+=-") ; this-is-one-word (so `dw` would delete the entire thing)
 (set nvim.o.completeopt "menuone,noselect" ) ; insert mode completion
-(set nvim.o.guicursor "") 
+(set nvim.o.guicursor "a:blinkon100") ; blinking cursor
 
 ; -- Folding --
 (set nvim.o.foldmethod "indent")
