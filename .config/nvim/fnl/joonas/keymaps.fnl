@@ -8,6 +8,10 @@
   "Execute `cmd` when key `chord` is pressed in `mode`."
   (nvim.set_keymap mode chord cmd opts))
 
+;; Reset directory, locally to window or to tab
+(nvim.command "command! RDL lcd %:p:h")
+(nvim.command "command! RDT tcd %:p:h")
+
 ;; -- Leader key --
 (keymap :n :<space> :<nop>)
 (set nvim.g.mapleader " ")
