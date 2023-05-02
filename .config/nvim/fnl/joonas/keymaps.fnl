@@ -52,7 +52,7 @@
 (keymap :n :<leader>xq "<cmd>TroubleToggle quickfix<cr>")
 (keymap :n :<leader>xr "<cmd>TroubleToggle lsp_references<cr>")
 ;; See `:help vim.diagnostic.*` for documentation on any of the below functions
-(keymap :n :<space>ld "<cmd>lua vim.diagnostic.open_float()<cr>")
+(keymap :n :<leader>ld "<cmd>lua vim.diagnostic.open_float()<cr>")
 (keymap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 (keymap :n "]d" "<cmd>lua vim.diagnostic.goto_next()<cr>")
 
