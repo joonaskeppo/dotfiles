@@ -10,6 +10,14 @@
 (defn- keymap [mode chord f bufopts]
   (vim.keymap.set mode chord f bufopts))
 
+;; per `:h lsp-semantic-highlight`
+(defn- clear-semantic-highlights []
+  ;; Hide semantic highlights for functions
+  (nvim.set_hl 0 "@lsp.type.function" {})
+  ;; Hide all semantic highlights
+  (each [_ group (ipairs (vim.fn.getcompletion "@lsp" "highlight"))]
+    (nvim.set_hl 0 group {})))
+
 (defn setup []
   (let [config {:virtual_text false
                 :update_in_insert true
@@ -23,6 +31,7 @@
                         :header ""
                         :prefix ""}}]
     (vim.diagnostic.config config)
+    (clear-semantic-highlights)
     (-> vim.lsp
         (a.assoc-in [:handlers :textDocument/hover]
                     (vim.lsp.with vim.lsp.handlers.hover {:border "rounded"}))

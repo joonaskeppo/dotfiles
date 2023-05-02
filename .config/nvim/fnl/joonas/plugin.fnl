@@ -30,7 +30,9 @@
   :numToStr/Comment.nvim {:mod :comment}
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
-  :nvim-lualine/lualine.nvim {:config (fn [] (let [lualine (require :lualine)] (lualine.setup)))}
+  :nvim-lualine/lualine.nvim {:config (fn [] (let [lualine (require :lualine)
+                                                   zenbones (require :lualine.themes.zenbones_light_bright)]
+                                               (lualine.setup {:theme zenbones})))}
   :nvim-orgmode/orgmode {:config (fn [] (let [orgmode (require :orgmode)] (orgmode.setup_ts_grammar)))}
   :nvim-telescope/telescope-file-browser.nvim {}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 

@@ -10,7 +10,7 @@
                        "sql"
                        "clojure" "fennel" "scheme" "racket"
                        "markdown"
-                       "help" "vim"
+                       "vim"
                        "bash"
                        "html" "css" "json" "javascript" "typescript"]
    :sync_installed false
@@ -20,7 +20,7 @@
    :additional_vim_regex_highlighting  false
    :indent {:enable true
             :disable [""]}
-   :rainbow {:enable true
+   :rainbow {:enable false
              :extended_mode true
              :max_file_lines nil}
    :context_commentstring {:enable true}})
