@@ -43,6 +43,7 @@
   :preservim/vim-markdown {}
   :rafamadriz/friendly-snippets {}
   :rktjmp/lush.nvim {}
+  :ThePrimeagen/harpoon {}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
   :tpope/vim-sexp-mappings-for-regular-people {}

@@ -55,3 +55,17 @@
 (keymap :n :<space>ld "<cmd>lua vim.diagnostic.open_float()<cr>")
 (keymap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 (keymap :n "]d" "<cmd>lua vim.diagnostic.goto_next()<cr>")
+
+;; -- Harpoon --
+(keymap :n "<leader>ht" "<cmd>Telescope harpoon marks<cr>")
+(keymap :n "<leader>hm" "<cmd>lua require(\"harpoon.mark\").add_file()<cr>")
+(keymap :n "<leader>hv" "<cmd>lua require(\"harpoon.ui\").toggle_quick_menu()<cr>")
+(keymap :n "[h" "<cmd>lua require(\"harpoon.ui\").nav_prev()<cr>")
+(keymap :n "]h" "<cmd>lua require(\"harpoon.ui\").nav_next()<cr>")
+(keymap :n "]h" "<cmd>lua require(\"harpoon.ui\").nav_next()<cr>")
+(keymap :n "<leader>h1" "<cmd>lua require(\"harpoon.ui\").nav_file(1)<cr>")
+(keymap :n "<leader>h2" "<cmd>lua require(\"harpoon.ui\").nav_file(2)<cr>")
+(keymap :n "<leader>h3" "<cmd>lua require(\"harpoon.ui\").nav_file(3)<cr>")
+(keymap :n "<leader>h4" "<cmd>lua require(\"harpoon.ui\").nav_file(4)<cr>")
+(keymap :n "<leader>h5" "<cmd>lua require(\"harpoon.ui\").nav_file(5)<cr>")
+
