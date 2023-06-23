@@ -14,6 +14,7 @@
   :hrsh7th/cmp-nvim-lua {}
   :hrsh7th/cmp-path {}
   :hrsh7th/nvim-cmp {:mod :cmp}
+  :jay-babu/mason-nvim-dap.nvim {}
   :JoosepAlviste/nvim-ts-context-commentstring {}
   :jose-elias-alvarez/null-ls.nvim {}
   :junegunn/fzf {:mod :fzf :build (fn [] (nvim.fn.fzf#install))}
@@ -22,11 +23,12 @@
   :lewis6991/gitsigns.nvim {:config (fn [] (let [gitsigns (require :gitsigns)] (gitsigns.setup)))}
   :lewis6991/impatient.nvim {}
   :mcchrish/zenbones.nvim {:mod :theme}
+  :mfussenegger/nvim-dap {:mod :dap}
   :neovim/nvim-lspconfig {:mod :lsp :requires [[:williamboman/mason.nvim] [:williamboman/mason-lspconfig.nvim]]}
   :numToStr/Comment.nvim {:mod :comment}
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
-  :nvim-lualine/lualine.nvim {:config (fn [] (let [lualine (require :lualine) zenbones (require :lualine.themes.zenbones_light_bright)] (lualine.setup {:theme zenbones})))}
+  :nvim-lualine/lualine.nvim {:mod :lualine}
   :nvim-orgmode/orgmode {:config (fn [] (let [orgmode (require :orgmode)] (orgmode.setup_ts_grammar)))}
   :nvim-telescope/telescope-file-browser.nvim {}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
@@ -36,11 +38,12 @@
   :Olical/aniseed {}
   :Olical/conjure {:mod :conjure}
   :Olical/nvim-local-fennel {}
-  ; :p00f/nvim-ts-rainbow {}
   :PaterJason/cmp-conjure {}
   :preservim/vim-markdown {}
   :rafamadriz/friendly-snippets {}
+  :theHamsta/nvim-dap-virtual-text {:mod :dap}
   :rktjmp/lush.nvim {}
+  :stevearc/oil.nvim {:mod :oil}
   :ThePrimeagen/harpoon {}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
