@@ -30,7 +30,6 @@
   :nvim-lua/popup.nvim {}
   :nvim-lualine/lualine.nvim {:mod :lualine}
   :nvim-orgmode/orgmode {:config (fn [] (let [orgmode (require :orgmode)] (orgmode.setup_ts_grammar)))}
-  :nvim-telescope/telescope-file-browser.nvim {}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
   :nvim-telescope/telescope.nvim {:mod :telescope}
   :nvim-tree/nvim-web-devicons {}

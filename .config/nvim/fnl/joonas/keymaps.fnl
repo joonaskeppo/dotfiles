@@ -35,9 +35,9 @@
 ;; NOTE: temporarily not using ripgrep; running into consistent out-of-memory issues with latest macOS
 (keymap :n :<C-d> "<C-d>zz")
 (keymap :n :<C-u> "<C-u>zz")
+(keymap :n :- "<cmd>lua require(\"oil\").toggle_float()<cr>")
 (keymap :n :<leader>ff "<cmd>Telescope find_files<cr>")
 ; (keymap :n :<leader>ff "<cmd>Telescope find_files find_command=rg,--hidden,--files<cr>")
-(keymap :n :<space>fF "<cmd>Telescope file_browser<cr>")
 (keymap :n :<leader>fp "<cmd>Telescope git_files<cr>")
 ; (keymap :n :<leader>fp "<cmd>Telescope git_files find_command=rg,--hidden,--files<cr>")
 (keymap :n :<leader>fg "<cmd>Telescope live_grep<cr>")
