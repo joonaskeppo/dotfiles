@@ -7,5 +7,6 @@
 
 (lualine.setup
   {:theme zenbones
-   :globalstatus true})
+   :options {:globalstatus true}
+   :sections {:lualine_c [{1 "filename" :path 2}]}})
 
