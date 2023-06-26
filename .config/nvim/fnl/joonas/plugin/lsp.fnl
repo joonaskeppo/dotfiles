@@ -2,7 +2,7 @@
   {autoload {: lspconfig
              handlers joonas.lsp.handlers}})
 
-(handlers.setup)
+(handlers.setup :default)
 
 (require :joonas.lsp.langs)
 (require :joonas.lsp.null-ls)

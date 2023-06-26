@@ -7,8 +7,7 @@
              : lspconfig}})
 
 (def- base-opts
-  {:on-attach handlers.on-attach
-   :capabilities handlers.capabilities})
+  {:capabilities handlers.capabilities})
 
 (def- default-server-config {:settings {}})
 
@@ -18,12 +17,14 @@
                                                    (.. (nvim.fn.stdpath "config") "/lua") true}}
                              :telemetry {:enable false}}}}
    :clangd default-server-config
-   :clojure_lsp default-server-config
-   :sqlls default-server-config})
+   :clojure_lsp {:settings {}
+                 :on_attach (fn [] (handlers.setup :lisp))}
+   :sqlls default-server-config
+   :rust_analyzer default-server-config})
 
 (mason-lspconfig.setup {:ensure_installed (a.keys servers)})
 
 (each [lang lang-opts (pairs servers)]
   (let [setup-fn (. lspconfig lang :setup)
-        server-opts (a.merge lang-opts base-opts)]
+        server-opts (a.merge base-opts lang-opts)]
     (setup-fn server-opts)))

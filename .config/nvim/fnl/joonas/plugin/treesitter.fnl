@@ -17,7 +17,7 @@
    :highlight {:enable true
                :disable ["sql"] ; some issues likely due to HugSQL syntax
                }
-   :additional_vim_regex_highlighting  false
+   :additional_vim_regex_highlighting  true ; at least for now (primarily: Clojure/Conjure)
    :indent {:enable true
             :disable [""]}
    :rainbow {:enable false

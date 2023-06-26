@@ -28,8 +28,9 @@
 (keymap :v :< "<gv")
 (keymap :v :> ">gv")
 
-;; -- Yankage --
+;; -- Misc --
 (keymap :v :p "\"_dP") ;; continue pasting the thing that was previously yanked
+(keymap :t :<Esc> "<C-\\><C-n>") ;; Use <Esc> to quit Terminal mode
 
 ;; -- Navigation --
 ;; NOTE: temporarily not using ripgrep; running into consistent out-of-memory issues with latest macOS
