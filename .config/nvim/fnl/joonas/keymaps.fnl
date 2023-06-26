@@ -8,10 +8,6 @@
   "Execute `cmd` when key `chord` is pressed in `mode`."
   (nvim.set_keymap mode chord cmd opts))
 
-;; Reset directory, locally to window or to tab
-(nvim.command "command! RDL lcd %:p:h")
-(nvim.command "command! RDT tcd %:p:h")
-
 ;; -- Leader key --
 (keymap :n :<space> :<nop>)
 (set nvim.g.mapleader " ")
@@ -33,7 +29,6 @@
 (keymap :t :<Esc> "<C-\\><C-n>") ;; Use <Esc> to quit Terminal mode
 
 ;; -- Navigation --
-;; NOTE: temporarily not using ripgrep; running into consistent out-of-memory issues with latest macOS
 (keymap :n :<C-d> "<C-d>zz")
 (keymap :n :<C-u> "<C-u>zz")
 (keymap :n :- "<cmd>lua require(\"oil\").toggle_float()<cr>")
