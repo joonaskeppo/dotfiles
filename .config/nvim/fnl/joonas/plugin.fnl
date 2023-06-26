@@ -5,6 +5,10 @@
 (p.use
   :JoosepAlviste/nvim-ts-context-commentstring {}
   :L3MON4D3/LuaSnip {}
+  :Olical/aniseed {}
+  :Olical/conjure {:mod :conjure}
+  :Olical/nvim-local-fennel {}
+  :PaterJason/cmp-conjure {}
   :ThePrimeagen/harpoon {}
   :akinsho/toggleterm.nvim {:tag "*" :config (fn [] (let [tt (require :toggleterm)] (tt.setup)))}
   :bakpakin/fennel.vim {}
