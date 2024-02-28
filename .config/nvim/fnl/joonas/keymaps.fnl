@@ -65,3 +65,5 @@
 (keymap :n "<leader>m4" "<cmd>lua require(\"harpoon.ui\").nav_file(4)<cr>")
 (keymap :n "<leader>m5" "<cmd>lua require(\"harpoon.ui\").nav_file(5)<cr>")
 
+;; -- SQL --
+(set nvim.g.ftplugin_sql_omni_key "<C-j>")

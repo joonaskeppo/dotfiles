@@ -16,6 +16,8 @@
   :folke/trouble.nvim {}
   :godlygeek/tabular {}
   :julienvincent/nvim-paredit {:mod :sexp}
+  :julienvincent/nvim-paredit-fennel {:mod :sexp}
+  :ekaitz-zarraga/nvim-paredit-scheme {:mod :sexp}
   :hrsh7th/cmp-buffer {}
   :hrsh7th/cmp-cmdline {}
   :hrsh7th/cmp-nvim-lsp {}
