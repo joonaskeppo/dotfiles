@@ -15,7 +15,7 @@
   :christoomey/vim-tmux-navigator {}
   :folke/trouble.nvim {}
   :godlygeek/tabular {}
-  :guns/vim-sexp {:mod :sexp}
+  :julienvincent/nvim-paredit {:mod :sexp}
   :hrsh7th/cmp-buffer {}
   :hrsh7th/cmp-cmdline {}
   :hrsh7th/cmp-nvim-lsp {}
@@ -47,7 +47,6 @@
   :theHamsta/nvim-dap-virtual-text {:mod :dap}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
-  :tpope/vim-sexp-mappings-for-regular-people {}
   :tpope/vim-surround {}
   :wbthomason/packer.nvim {}
   :williamboman/mason-lspconfig.nvim {:requires [[:neovim/nvim-lspconfig] [:williamboman/mason.nvim]]}
