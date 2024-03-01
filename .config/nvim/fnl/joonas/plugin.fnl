@@ -13,7 +13,7 @@
   :akinsho/toggleterm.nvim {:tag "*" :config (fn [] (let [tt (require :toggleterm)] (tt.setup)))}
   :bakpakin/fennel.vim {}
   :christoomey/vim-tmux-navigator {}
-  :folke/trouble.nvim {}
+  :folke/trouble.nvim {:mod :trouble}
   :godlygeek/tabular {}
   :julienvincent/nvim-paredit {:mod :sexp}
   :julienvincent/nvim-paredit-fennel {:mod :sexp}
