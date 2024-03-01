@@ -5,6 +5,7 @@
 
 (telescope.setup
   {:defaults {:preview {:treesitter false}} ; NOTE: TS slows nvim down to a crawl with large projects, when using live_grep
+   :pickers {:find_files {:disable_devicons true}}
    :extensions {:fzf {:fuzzy true ; false will only do exact matching
                       :override_generic_sorter true ; override the generic sorter
                       :override_file_sorter true ; override the file sorter

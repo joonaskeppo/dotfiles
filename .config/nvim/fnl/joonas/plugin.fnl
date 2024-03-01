@@ -40,7 +40,6 @@
   :nvim-orgmode/orgmode {:config (fn [] (let [orgmode (require :orgmode)] (orgmode.setup_ts_grammar)))}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-telescope/telescope-live-grep-args.nvim]]}
-  :nvim-tree/nvim-web-devicons {}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter}
   :preservim/vim-markdown {}
   :rafamadriz/friendly-snippets {}
