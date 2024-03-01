@@ -6,7 +6,7 @@
   :akinsho/toggleterm.nvim {:tag "*" :config (fn [] (let [tt (require :toggleterm)] (tt.setup)))}
   :bakpakin/fennel.vim {}
   :christoomey/vim-tmux-navigator {}
-  :ekaitz-zarraga/nvim-paredit-scheme {:mod :sexp}
+  :ekaitz-zarraga/nvim-paredit-scheme {:mod :paredit}
   :folke/trouble.nvim {:mod :trouble}
   :godlygeek/tabular {}
   :hrsh7th/cmp-buffer {}
@@ -18,8 +18,8 @@
   :jay-babu/mason-nvim-dap.nvim {}
   :JoosepAlviste/nvim-ts-context-commentstring {}
   :jose-elias-alvarez/null-ls.nvim {}
-  :julienvincent/nvim-paredit {:mod :sexp}
-  :julienvincent/nvim-paredit-fennel {:mod :sexp}
+  :julienvincent/nvim-paredit {:mod :paredit}
+  :julienvincent/nvim-paredit-fennel {:mod :paredit}
   :junegunn/fzf {:mod :fzf :build (fn [] (nvim.fn.fzf#install))}
   :junegunn/fzf.vim {}
   :L3MON4D3/LuaSnip {}
