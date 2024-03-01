@@ -3,7 +3,8 @@
              core aniseed.core}})
 
 (set nvim.g.conjure#highlight#enabled true)
-(set nvim.g.conjure#filetypes ["clojure" "fennel" "janet" "hy" "racket" "scheme" "lisp"]) ; use only for Lisp-like languages
+(set nvim.g.conjure#filetypes ["clojure" "fennel" "janet" "hy" "racket" "scheme" "lisp" "sicp"]) ; use only for Lisp-like languages
+(set nvim.g.conjure#filetype#sicp "conjure.client.racket.stdio")
 (set nvim.g.conjure#extract#tree_sitter#enabled true)
 
 (nvim.create_user_command :PortalAPIOpen
