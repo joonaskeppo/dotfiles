@@ -1,5 +1,8 @@
 (module joonas.plugin.comment
-  {autoload {: Comment}})
+  {autoload {: Comment
+             nvim aniseed.nvim}})
+
+(set nvim.g.skip_ts_context_commentstring_module true)
 
 (Comment.setup
   {:pre_hook (fn [ctx]
