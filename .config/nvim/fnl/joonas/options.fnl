@@ -1,5 +1,5 @@
 (module joonas.options
-  {require {nvim aniseed.nvim}})
+    {require {nvim aniseed.nvim}})
 
 ;; -- Spacing --
 (set nvim.o.tabstop 4)
@@ -7,6 +7,15 @@
 (set nvim.o.shiftwidth 4)
 (set nvim.o.expandtab true) ; inserts spaces for tabs
 (set nvim.o.smartindent true)
+
+;; C source files ought to have wider tabs
+(vim.api.nvim_create_autocmd
+    "FileType"
+    {:pattern   "c"
+     :callback  (fn [ev]
+                    (set nvim.bo.tabstop 8)
+                    (set nvim.bo.softtabstop 8)
+                    (set nvim.bo.shiftwidth 8))})
 
 ; -- Windows --
 (set nvim.o.number true) ; show line numbers
