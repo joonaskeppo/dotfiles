@@ -1,5 +1,5 @@
 export ZSH="/Users/joonaskeppo/.oh-my-zsh"
-ZSH_THEME="agnoster-light"
+ZSH_THEME="robbyrussell-light"
 plugins=(git)
 source $ZSH/oh-my-zsh.sh
 
