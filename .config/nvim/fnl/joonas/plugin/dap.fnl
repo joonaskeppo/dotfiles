@@ -11,10 +11,9 @@
 ;; --- configurations ---
 
 (def- cpp-adapter
-  {:type "server"
-   :port "${port}"
-   :executable {:command "codelldb" ; installed via Mason
-                :args ["--port" "${port}"]}})
+  {:type "executable"
+   :command "/usr/local/bin/lldb-vscode" ; symlink: /usr/local/opt/llvm/bin/lldb-vscode
+   :name "lldb"})
 
 (def- cpp-configs
   [{:name "Launch file"
@@ -22,7 +21,9 @@
     :request "launch"
     :program (fn [] (vim.fn.input "Path to executable: " (a.str (vim.fn.getcwd) "/") "file")) 
     :cwd "${workspaceFolder}"
-    :stopOnEntry false}])
+    :stopOnEntry false
+    :logFile (a.str (vim.fn.stdpath "data") "/cpp-dap.log")
+    :runInTerminal true}])
 
 (a.assoc dap.adapters
          :lldb cpp-adapter)
