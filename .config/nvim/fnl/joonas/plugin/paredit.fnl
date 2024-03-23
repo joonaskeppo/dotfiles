@@ -116,8 +116,34 @@
                            (paredit.cursor.place_cursor
                              (paredit.wrap.wrap_enclosing_form_under_cursor "(" ")")
                              {:placement "inner_end" :mode "insert"}))
-                         "Wrap form insert tail"]}})
+                         "Wrap form insert tail"]
+     ;; "hack": mimicking textobject manipulation
+     "cse("             [(fn []
+                           (paredit.wrap.wrap_element_under_cursor "(" ")")
+                           {:placement "inner_end" :mode "normal"})]
+     "cse)"             [(fn []
+                           (paredit.wrap.wrap_element_under_cursor "(" ")")
+                           {:placement "inner_end" :mode "normal"})]
+     "csf("             [(fn []
+                           (paredit.wrap.wrap_enclosing_form_under_cursor "(" ")")
+                           {:placement "inner_end" :mode "normal"})]
+     "csf("             [(fn []
+                           (paredit.wrap.wrap_enclosing_form_under_cursor "(" ")")
+                           {:placement "inner_end" :mode "normal"})]
+     "cse["             [(fn []
+                           (paredit.wrap.wrap_element_under_cursor "[" "]")
+                           {:placement "inner_end" :mode "normal"})]
+     "cse]"             [(fn []
+                           (paredit.wrap.wrap_element_under_cursor "[" "]")
+                           {:placement "inner_end" :mode "normal"})]
+     "csf["             [(fn []
+                           (paredit.wrap.wrap_enclosing_form_under_cursor "[" "]")
+                           {:placement "inner_end" :mode "normal"})]
+     "csf]"             [(fn []
+                           (paredit.wrap.wrap_enclosing_form_under_cursor "[" "]")
+                           {:placement "inner_end" :mode "normal"})]}})
 
 ;; Setting up extension plugins
 (scheme.setup paredit)
 (fennel.setup)
+
