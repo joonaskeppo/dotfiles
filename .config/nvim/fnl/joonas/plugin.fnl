@@ -15,7 +15,6 @@
   :hrsh7th/cmp-nvim-lua {}
   :hrsh7th/cmp-path {}
   :hrsh7th/nvim-cmp {:mod :cmp}
-  :jay-babu/mason-nvim-dap.nvim {}
   :JoosepAlviste/nvim-ts-context-commentstring {}
   :jose-elias-alvarez/null-ls.nvim {}
   :julienvincent/nvim-paredit {:mod :paredit}
@@ -26,7 +25,6 @@
   :lewis6991/gitsigns.nvim {:config (fn [] (let [gitsigns (require :gitsigns)] (gitsigns.setup)))}
   :lewis6991/impatient.nvim {}
   :mcchrish/zenbones.nvim {:mod :theme}
-  :mfussenegger/nvim-dap {:mod :dap}
   :neovim/nvim-lspconfig {:mod :lsp :requires [[:williamboman/mason.nvim] [:williamboman/mason-lspconfig.nvim]]}
   :numToStr/Comment.nvim {:mod :comment}
   :nvim-lua/plenary.nvim {}
@@ -44,8 +42,8 @@
   :purescript-contrib/purescript-vim {}
   :rafamadriz/friendly-snippets {}
   :rktjmp/lush.nvim {}
+  :sakhnik/nvim-gdb {:mod :gdb}
   :stevearc/oil.nvim {:mod :oil}
-  :theHamsta/nvim-dap-virtual-text {:mod :dap}
   :ThePrimeagen/harpoon {}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}
