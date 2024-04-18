@@ -20,7 +20,7 @@
    ; - "auto"   - A combination of remain and follow, it will try keep the cursor in the original position
    ;              unless doing so would result in the cursor no longer being within the original form. In
    ;              this case it will place the cursor on the moved edge
-   :cursor_behaviour "auto" ;; remain, follow, auto
+   :cursor_behaviour "follow" ;; remain, follow, auto
    :indent {
     ; This controls how nvim-paredit handles indentation when performing operations which
     ; should change the indentation of the form (such as when slurping or barfing).
