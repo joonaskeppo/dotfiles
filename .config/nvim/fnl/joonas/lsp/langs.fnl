@@ -18,6 +18,7 @@
                              :telemetry {:enable false}}}}
    :clangd default-server-config
    :purescriptls {:settings {:purescript {:addSpagoSources true}}}
+   :tsserver default-server-config
    :clojure_lsp {:settings {}
                  :on_attach (fn [] (handlers.setup :lisp))}
    :sqlls default-server-config
