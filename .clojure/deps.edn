@@ -7,4 +7,4 @@
                 "--interactive"]}
 
   :portal
-  {:extra-deps {djblue/portal {:mvn/version "0.35.1"}}}}}
+  {:extra-deps {djblue/portal {:mvn/version "0.57.1"}}}}}

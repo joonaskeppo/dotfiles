@@ -10,7 +10,7 @@
 
 (nvim.create_user_command :PortalAPIOpen
                           (fn [_args]
-                            (nvim.command "ConjureEval (do (require '[portal.api]) (portal.api/tap) (portal.api/open {:theme :portal.colors/nord}))"))
+                            (nvim.command "ConjureEval (do (require '[portal.api]) (portal.api/tap) (portal.api/open {:theme :portal.colors/solarized-light}))"))
                           {})
 (nvim.create_user_command :FigwheelStart
                           (fn [args]
