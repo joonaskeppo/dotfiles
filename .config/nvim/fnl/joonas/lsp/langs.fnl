@@ -22,8 +22,11 @@
    :ocamllsp default-server-config
    :clojure_lsp {:settings {}
                  :on_attach (fn [] (handlers.setup :lisp))}
+   :hls default-server-config
    :sqlls default-server-config
-   :rust_analyzer default-server-config})
+   :zls default-server-config
+   :rust_analyzer default-server-config
+   :marksman default-server-config})
 
 (mason-lspconfig.setup {:ensure_installed (a.keys servers)})
 

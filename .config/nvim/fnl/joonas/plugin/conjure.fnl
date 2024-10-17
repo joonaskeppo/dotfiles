@@ -6,6 +6,7 @@
 (set nvim.g.conjure#highlight#enabled true)
 (set nvim.g.conjure#filetypes lisp.filetypes) ; use only for Lisp-like languages
 (set nvim.g.conjure#filetype#sicp "conjure.client.racket.stdio")
+(set nvim.g.conjure#filetype#scheme "conjure.client.guile.socket")
 (set nvim.g.conjure#extract#tree_sitter#enabled true)
 
 (nvim.create_user_command :PortalAPIOpen

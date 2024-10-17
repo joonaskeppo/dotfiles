@@ -32,3 +32,6 @@ vim.g["aniseed#env"] = {
   module = "joonas.init",
   compile = true
 }
+
+-- OCaml/Opam inclusion
+execute(fmt('set runtimepath^="%s/.opam/default/share/ocp-indent/vim"', os.getenv("HOME")))

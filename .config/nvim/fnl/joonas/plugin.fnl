@@ -4,6 +4,7 @@
 
 (p.use
   :akinsho/toggleterm.nvim {:tag "*" :config (fn [] (let [tt (require :toggleterm)] (tt.setup)))}
+  :alx741/vim-hindent {}
   :bakpakin/fennel.vim {}
   :christoomey/vim-tmux-navigator {}
   :folke/trouble.nvim {:mod :trouble}
@@ -28,7 +29,6 @@
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
   :nvim-lualine/lualine.nvim {:mod :lualine}
-  :nvim-orgmode/orgmode {:config (fn [] (let [orgmode (require :orgmode)] (orgmode.setup_ts_grammar)))}
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-telescope/telescope-live-grep-args.nvim]]}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter}
@@ -51,5 +51,7 @@
   :williamboman/mason.nvim {:config (fn [] (let [mason (require :mason)] (mason.setup))) :run ":MasonUpdate"}
   :windwp/nvim-autopairs {:mod :autopairs}
   :wlangstroth/vim-racket {}
+  :ziglang/zig.vim {}
+  :zyedidia/literate.vim {}
   )
 
