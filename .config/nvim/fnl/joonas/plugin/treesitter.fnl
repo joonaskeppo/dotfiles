@@ -12,6 +12,7 @@
                        "markdown"
                        "vim"
                        "bash"
+                       "ocaml"
                        "html" "css" "json" "javascript" "typescript"]
    :sync_installed false
    :highlight {:enable true
@@ -19,7 +20,7 @@
                }
    :additional_vim_regex_highlighting  true ; at least for now (primarily: Clojure/Conjure)
    :indent {:enable true
-            :disable [""]}
+            :disable ["ocaml"]}
    :rainbow {:enable false
              :extended_mode true
              :max_file_lines nil}

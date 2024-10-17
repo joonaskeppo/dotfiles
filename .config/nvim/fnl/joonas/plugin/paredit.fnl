@@ -2,8 +2,6 @@
   {autoload {nvim aniseed.nvim
              paredit nvim-paredit
              indentation nvim-paredit.indentation.native
-             scheme nvim-paredit-scheme
-             fennel nvim-paredit-fennel
              lisp   joonas.lisp}})
 
 (paredit.setup
@@ -142,8 +140,4 @@
      "csf]"             [(fn []
                            (paredit.wrap.wrap_enclosing_form_under_cursor "[" "]")
                            {:placement "inner_end" :mode "normal"})]}})
-
-;; Setting up extension plugins
-(scheme.setup paredit)
-(fennel.setup)
 
