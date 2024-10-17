@@ -2,6 +2,8 @@
 **/.cpcache
 **/.clj-kondo
 **/.lsp
+.clojure/**
+!.clojure/deps.edn
 
 # Neovim
 .config/nvim/plugin/
