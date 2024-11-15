@@ -60,6 +60,5 @@
                  (keymap :n "gi" vim.lsp.buf.implementation opts)
                  (keymap :n "<C-k>" vim.lsp.buf.signature_help opts)
                  (keymap :n "<leader>D" vim.lsp.buf.type_definition opts)
-                 (keymap [:n :v] "<leader>ca" vim.lsp.buf.code_action opts)
                  (keymap :n "<leader>gr" vim.lsp.buf.references opts)
                  (keymap :n "<leader>bf" (fn [] (vim.lsp.buf.format {:async true})) opts)))})

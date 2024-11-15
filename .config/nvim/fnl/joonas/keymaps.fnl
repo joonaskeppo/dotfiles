@@ -51,6 +51,10 @@
 (keymap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<cr>")
 (keymap :n "]d" "<cmd>lua vim.diagnostic.goto_next()<cr>")
 
+;; -- Code Actions --
+
+(keymap :n :<leader>ca "<cmd>lua require(\"tiny-code-action\").code_action()<cr>")
+
 ;; -- Harpoon --
 (keymap :n "<leader>mt" "<cmd>Telescope harpoon marks<cr>")
 (keymap :n "<leader>ma" "<cmd>lua require(\"harpoon.mark\").add_file()<cr>")
