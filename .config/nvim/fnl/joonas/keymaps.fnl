@@ -45,7 +45,7 @@
 (keymap :n :<leader>xd "<cmd>Trouble diagnostics toggle filter.buf=0<cr>")
 (keymap :n :<leader>xl "<cmd>Trouble loclist toggle<cr>")
 (keymap :n :<leader>xq "<cmd>Trouble qflist toggle<cr>")
-(keymap :n :<leader>xr "<cmd>Trouble lsp toggle focus=false win.position=right<cr>")
+(keymap :n :<leader>xr "<cmd>Trouble lsp toggle<cr>")
 ;; See `:help vim.diagnostic.*` for documentation on any of the below functions
 (keymap :n :<leader>ld "<cmd>lua vim.diagnostic.open_float()<cr>")
 (keymap :n "[d" "<cmd>lua vim.diagnostic.goto_prev()<cr>")
