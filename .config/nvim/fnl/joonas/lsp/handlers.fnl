@@ -61,4 +61,11 @@
                  (keymap :n "<C-k>" vim.lsp.buf.signature_help opts)
                  (keymap :n "<leader>D" vim.lsp.buf.type_definition opts)
                  (keymap :n "<leader>gr" vim.lsp.buf.references opts)
-                 (keymap :n "<leader>bf" (fn [] (vim.lsp.buf.format {:async true})) opts)))})
+                 (keymap :n "<leader>bf" (fn [] (vim.lsp.buf.format {:async true})) opts)
+                 (keymap :n "<leader>br" (fn []
+                                           (let [current-word (vim.fn.expand "<cword>")]
+                                            (vim.ui.input {:prompt "Rename to: " :default current-word}
+                                                          (fn [inp]
+                                                            (if inp
+                                                              (vim.lsp.buf.rename inp)
+                                                              (print "Rename canceled")))))))))})
