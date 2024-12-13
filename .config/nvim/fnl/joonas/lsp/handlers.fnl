@@ -7,17 +7,6 @@
 ;; https://github.com/neovim/nvim-lspconfig#suggested-configuration
 ;; https://github.com/LunarVim/Neovim-from-scratch/blob/06-LSP/lua/user/lsp/handlers.lua
 
-; (defn- keymap [mode chord cmd opts]
-;   (vim.api.nvim mode chord cmd opts))
-
-;; per `:h lsp-semantic-highlight`
-(defn- clear-semantic-highlights []
-  ;; Hide semantic highlights for functions
-  (nvim.set_hl 0 "@lsp.type.function" {})
-  ;; Hide all semantic highlights
-  (each [_ group (ipairs (vim.fn.getcompletion "@lsp" "highlight"))]
-    (nvim.set_hl 0 group {})))
-
 (defn setup [mode]
   (let [config {:virtual_text (case mode :lisp false _ true)
                 :update_in_insert true
@@ -31,7 +20,6 @@
                         :header ""
                         :prefix ""}}]
     (vim.diagnostic.config config)
-    (clear-semantic-highlights)
     (-> vim.lsp
         (a.assoc-in [:handlers :textDocument/hover]
                     (vim.lsp.with vim.lsp.handlers.hover {:border "rounded"}))
@@ -49,7 +37,6 @@
   "LspAttach"
   {:group (vim.api.nvim_create_augroup "UserLspConfig" {})
    :callback (fn [ev]
-               (clear-semantic-highlights)
                ;; Enable completion triggered by <c-x><c-o>
                (tset (. vim.bo ev.buf) :omnifunc "v:lua.vim.lsp.omnifunc")
                (let [opts {:noremap true :silent true :buffer ev.buf}
