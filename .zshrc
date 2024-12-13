@@ -10,7 +10,7 @@ alias tidy="/usr/local/bin/tidy"
 export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
 export MYVIMRC="$HOME/.config/nvim/init.vim"
 export GEM_HOME="$HOME/.gem"
-export PATH="/usr/local/Cellar/llvm/18.1.8/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:$PATH"
+export PATH="/usr/local/Cellar/llvm/18.1.8/bin:$HOME/.local/bin:$HOME/.yarn/bin:$HOME/.config/yarn/global/node_modules/.bin:/usr/local/sbin:$PATH"
 export INCLUDE_PATH="/usr/local/include:$INCLUDE_PATH"
 export LIBRARY_PATH="/usr/local/lib:$LIBRARY_PATH"
 
@@ -23,3 +23,7 @@ export LIBRARY_PATH="/usr/local/lib:$LIBRARY_PATH"
 # This section can be safely removed at any time if needed.
 [[ ! -r "$HOME/.opam/opam-init/init.zsh" ]] || source "$HOME/.opam/opam-init/init.zsh" > /dev/null 2> /dev/null
 # END opam configuration
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
