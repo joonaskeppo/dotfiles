@@ -23,7 +23,6 @@
   :hrsh7th/cmp-nvim-lua {}
   :hrsh7th/cmp-path {}
   :hrsh7th/nvim-cmp {:mod :cmp}
-  :jose-elias-alvarez/null-ls.nvim {}
   :julienvincent/nvim-paredit {:mod :paredit}
   :junegunn/fzf {:mod :fzf :build (fn [] (nvim.fn.fzf#install))}
   :junegunn/fzf.vim {}
@@ -38,6 +37,7 @@
   :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-telescope/telescope-live-grep-args.nvim]]}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter}
+  :nvimtools/none-ls.nvim {}
   :preservim/vim-markdown {}
   :purescript-contrib/purescript-vim {}
   :rachartier/tiny-code-action.nvim {:config (fn [] (let [tiny-code-action (require :tiny-code-action)] (tiny-code-action.setup)))}
