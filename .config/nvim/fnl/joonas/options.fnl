@@ -17,6 +17,15 @@
                     (set nvim.bo.softtabstop 8)
                     (set nvim.bo.shiftwidth 8))})
 
+;; OCaml source files ought to have *less wide* tabs
+(vim.api.nvim_create_autocmd
+    "FileType"
+    {:pattern   "ocaml"
+     :callback  (fn [ev]
+                    (set nvim.bo.tabstop 2)
+                    (set nvim.bo.softtabstop 2)
+                    (set nvim.bo.shiftwidth 2))})
+
 ;; Override file extensions
 (vim.filetype.add {:extension {:bb "clojure"}})
 
