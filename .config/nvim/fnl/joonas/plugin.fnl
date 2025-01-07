@@ -24,8 +24,6 @@
   :hrsh7th/cmp-path {}
   :hrsh7th/nvim-cmp {:mod :cmp}
   :julienvincent/nvim-paredit {:mod :paredit}
-  :junegunn/fzf {:mod :fzf :build (fn [] (nvim.fn.fzf#install))}
-  :junegunn/fzf.vim {}
   :lewis6991/gitsigns.nvim {:config (fn [] (let [gitsigns (require :gitsigns)] (gitsigns.setup)))}
   :lewis6991/impatient.nvim {}
   :mcchrish/zenbones.nvim {:mod :theme}
@@ -34,7 +32,6 @@
   :nvim-lua/plenary.nvim {}
   :nvim-lua/popup.nvim {}
   :nvim-lualine/lualine.nvim {:mod :lualine}
-  :nvim-telescope/telescope-fzf-native.nvim {:run "make"} 
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-telescope/telescope-live-grep-args.nvim]]}
   :nvim-treesitter/nvim-treesitter {:mod :treesitter}
   :nvimtools/none-ls.nvim {}
