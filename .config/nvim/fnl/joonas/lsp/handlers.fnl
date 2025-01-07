@@ -26,10 +26,6 @@
         (a.assoc-in [:handlers :textDocument/signatureHelp]
                     (vim.lsp.with vim.lsp.handlers.signature_help {:border "rounded"})))))
 
-(def capabilities
-  (-> (vim.lsp.protocol.make_client_capabilities)
-      (cmp-nvim-lsp.default_capabilities)))
-
 ;; Use LspAttach autocommand to only map the following keys
 ;; after the language server attaches to the current buffer
 
