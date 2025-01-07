@@ -26,9 +26,6 @@
                     (set nvim.bo.softtabstop 2)
                     (set nvim.bo.shiftwidth 2))})
 
-;; Override file extensions
-(vim.filetype.add {:extension {:bb "clojure"}})
-
 ; -- Windows --
 (set nvim.o.number true) ; show line numbers
 (set nvim.o.relativenumber true) 

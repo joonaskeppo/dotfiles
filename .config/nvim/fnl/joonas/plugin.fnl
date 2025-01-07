@@ -33,14 +33,16 @@
   :nvim-lua/popup.nvim {}
   :nvim-lualine/lualine.nvim {:mod :lualine}
   :nvim-telescope/telescope.nvim {:mod :telescope :requires [[:nvim-telescope/telescope-live-grep-args.nvim]]}
-  :nvim-treesitter/nvim-treesitter {:mod :treesitter}
-  :nvimtools/none-ls.nvim {}
+  :nvim-treesitter/nvim-treesitter {:mod :treesitter :requires [[:ocaml-mlx/ocaml_mlx.nvim]]}
+  :nvimtools/none-ls.nvim {:mod :null-ls}
+  :ocaml-mlx/ocaml_mlx.nvim {}
   :preservim/vim-markdown {}
   :purescript-contrib/purescript-vim {}
   :rachartier/tiny-code-action.nvim {:config (fn [] (let [tiny-code-action (require :tiny-code-action)] (tiny-code-action.setup)))}
   :rafamadriz/friendly-snippets {}
   :rktjmp/lush.nvim {}
   :sakhnik/nvim-gdb {:mod :gdb}
+  :stevearc/conform.nvim {:requires [[:ocaml-mlx/ocaml_mlx.nvim]] :mod :conform}
   :stevearc/oil.nvim {:mod :oil}
   :tpope/vim-fugitive {}
   :tpope/vim-repeat {}

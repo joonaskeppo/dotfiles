@@ -5,4 +5,3 @@
 (handlers.setup :default)
 
 (require :joonas.lsp.langs)
-(require :joonas.lsp.null-ls)

@@ -18,4 +18,3 @@
                             (nvim.command (core.str "ConjureEval (do (require '[figwheel.main.api :as f]) "
                                                                    "(f/start \"" (core.get args :args) "\"))")))
                           {:nargs 1})
-    
