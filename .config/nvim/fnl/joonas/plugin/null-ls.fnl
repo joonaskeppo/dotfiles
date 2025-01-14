@@ -8,4 +8,5 @@
 (null-ls.setup
   {:debug false
    :sources [formatting.clang_format
+             formatting.prettier
              diagnostics.clj_kondo]})
