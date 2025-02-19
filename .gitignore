@@ -4,6 +4,8 @@
 **/.lsp
 .clojure/**
 !.clojure/deps.edn
+.lein/**
+!.lein/profiles.clj
 
 # Neovim
 .config/nvim/plugin/

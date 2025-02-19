@@ -18,3 +18,11 @@
                             (nvim.command (core.str "ConjureEval (do (require '[figwheel.main.api :as f]) "
                                                                    "(f/start \"" (core.get args :args) "\"))")))
                           {:nargs 1})
+
+(set nvim.g.conjure#client#clojure#nrepl#mapping#macro_expand "xm")
+
+; (vim.api.nvim_create_autocmd
+;   "FileType"
+;   {:pattern   "clj"
+;    :callback  (fn [_ev]
+;                 (set nvim.g.conjure#client#clojure#nrepl#mapping#macro_expand nil))})

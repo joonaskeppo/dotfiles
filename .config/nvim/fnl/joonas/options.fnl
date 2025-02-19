@@ -10,21 +10,21 @@
 
 ;; C source files ought to have wider tabs
 (vim.api.nvim_create_autocmd
-    "FileType"
-    {:pattern   "c"
-     :callback  (fn [ev]
-                    (set nvim.bo.tabstop 8)
-                    (set nvim.bo.softtabstop 8)
-                    (set nvim.bo.shiftwidth 8))})
+  "FileType"
+  {:pattern   "c"
+   :callback  (fn [_ev]
+                (set nvim.bo.tabstop 8)
+                (set nvim.bo.softtabstop 8)
+                (set nvim.bo.shiftwidth 8))})
 
 ;; OCaml source files ought to have *less wide* tabs
 (vim.api.nvim_create_autocmd
-    "FileType"
-    {:pattern   "ocaml"
-     :callback  (fn [ev]
-                    (set nvim.bo.tabstop 2)
-                    (set nvim.bo.softtabstop 2)
-                    (set nvim.bo.shiftwidth 2))})
+  "FileType"
+  {:pattern   "ocaml"
+   :callback  (fn [_ev]
+                (set nvim.bo.tabstop 2)
+                (set nvim.bo.softtabstop 2)
+                (set nvim.bo.shiftwidth 2))})
 
 ; -- Windows --
 (set nvim.o.number true) ; show line numbers
@@ -58,6 +58,6 @@
 
 ; -- Misc --
 (set nvim.o.termguicolors true) ; "Enables 24-bit RGB color in the |TUI|"
-(set nvim.o.clipboard "unnamedplus") ; use mac clipboard
+(set nvim.o.clipboard "unnamedplus") ; use clipboard
 (set nvim.o.mouse "a") ; ensure proper mouse support
 
